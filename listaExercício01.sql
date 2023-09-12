@@ -39,5 +39,13 @@ Questao 8 {
   INNER JOIN vendas ON livros.id = vendas.livro_id
   GROUP BY livros.titulo;
 }
+Questao 9{
+  SELECT livros.titulo, (vendas.quantidade * vendas.preco) AS receita_total
+  FROM livros
+  INNER JOIN vendas ON livros.id = vendas.livro_id
+  GROUP BY livros.titulo
+  HAVING receita_total > 10000;
+}
+
 
 
