@@ -64,6 +64,12 @@ Questao 12{
   LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
   GROUP BY alunos.nome;
 }
+Questao 13{
+  SELECT autores.nome AS autor, IFNULL(GROUP_CONCAT(livros.titulo SEPARATOR ', '), 'Nenhum livro') AS livros
+  FROM autores
+  LEFT JOIN livros ON autores.id = livros.autor_id
+  GROUP BY autores.nome;
+}
 
 
 
