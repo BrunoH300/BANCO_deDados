@@ -98,7 +98,13 @@ Questao 17{
   ORDER BY receita_total ASC
   LIMIT 1;
 }
-
+Questao 18{
+  SELECT autores.nome AS autor, SUM(20 * vendas.quantidade) AS receita_total
+  FROM autores
+  LEFT JOIN livros ON autores.id = livros.autor_id
+  LEFT JOIN vendas ON livros.id = vendas.livro_id
+  GROUP BY autores.nome;
+}
 
 
 
