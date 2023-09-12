@@ -53,7 +53,11 @@ Questao 10{
   GROUP BY autores.nome
   HAVING COUNT(livros.id) > 2;
 }
-
+Questao 11{
+  SELECT autores.nome AS autor, livros.titulo AS livro
+  FROM autores
+  INNER JOIN livros ON autores.id = livros.autor_id;
+}
 
 
 
