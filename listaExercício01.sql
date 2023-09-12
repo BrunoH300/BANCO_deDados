@@ -33,4 +33,11 @@ Questao 7{
   FROM matriculas
   GROUP BY matriculas.curso;
 }
+Questao 8 {
+  SELECT livros.titulo, (vendas.quantidade * vendas.preco) AS media_de_receita
+  FROM livros
+  INNER JOIN vendas ON livros.id = vendas.livro_id
+  GROUP BY livros.titulo;
+}
+
 
