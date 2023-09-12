@@ -22,3 +22,9 @@ Questao 5{
   INNER JOIN vendas ON livros.id = vendas.livro_id
   GROUP BY livros.titulo;
 }
+Questao 6{
+  SELECT autores.nome, COUNT(livros.id) AS total_de_livros
+  FROM autores
+  LEFT JOIN livros ON autores.id = livros.autor_id
+  GROUP BY autores.nome;
+}
