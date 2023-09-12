@@ -28,3 +28,9 @@ Questao 6{
   LEFT JOIN livros ON autores.id = livros.autor_id
   GROUP BY autores.nome;
 }
+Questao 7{
+  SELECT matriculas.curso, COUNT(*) AS total_de_alunos
+  FROM matriculas
+  GROUP BY matriculas.curso;
+}
+
