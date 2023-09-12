@@ -58,6 +58,14 @@ Questao 11{
   FROM autores
   INNER JOIN livros ON autores.id = livros.autor_id;
 }
+Questao 12{
+  SELECT alunos.nome AS aluno, GROUP_CONCAT(matriculas.curso SEPARATOR ', ') AS cursos
+  FROM alunos
+  LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
+  GROUP BY alunos.nome;
+}
+
+
 
 
 
