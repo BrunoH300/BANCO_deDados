@@ -10,3 +10,9 @@ Questao 3{
   INNER JOIN autores ON livros.autor_id = autores.id
   WHERE autores.nome = 'J.K. Rowling';
 }
+Questao 4{
+  SELECT alunos.nome
+  FROM alunos
+  INNER JOIN matriculas ON alunos.id = matriculas.aluno_id
+  WHERE matriculas.curso = 'Engenharia de Software';
+}
