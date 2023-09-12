@@ -90,7 +90,14 @@ Questao 16{
   ORDER BY total_de_livros DESC
   LIMIT 1;
 }
-
+Questao 17{
+  SELECT livros.titulo, SUM(vendas.quantidade * vendas.preco) AS receita_total
+  FROM livros
+  INNER JOIN vendas ON livros.id = vendas.livro_id
+  GROUP BY livros.titulo
+  ORDER BY receita_total ASC
+  LIMIT 1;
+}
 
 
 
