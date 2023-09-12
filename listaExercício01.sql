@@ -59,7 +59,7 @@ Questao 11{
   INNER JOIN livros ON autores.id = livros.autor_id;
 }
 Questao 12{
-  SELECT alunos.nome AS aluno, GROUP_CONCAT(matriculas.curso SEPARATOR ', ') AS cursos
+  SELECT alunos.nome AS aluno, (matriculas.curso SEPARATOR ', ') AS cursos
   FROM alunos
   LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
   GROUP BY alunos.nome;
@@ -70,6 +70,20 @@ Questao 13{
   LEFT JOIN livros ON autores.id = livros.autor_id
   GROUP BY autores.nome;
 }
+Questao 14{
+  SELECT matriculas.curso, IFNULL(GROUP_CONCAT(alunos.nome SEPARATOR ', '), 'Nenhum aluno') AS alunos
+  FROM matriculas
+  RIGHT JOIN alunos ON matriculas.aluno_id = alunos.id
+  GROUP BY matriculas.curso;
+}
+Questao 15{
+  SELECT alunos.nome AS aluno, GROUP_CONCAT(matriculas.curso SEPARATOR ', ') AS cursos
+  FROM alunos
+  INNER JOIN matriculas ON alunos.id = matriculas.aluno_id
+  GROUP BY alunos.nome;
+}
+
+
 
 
 
