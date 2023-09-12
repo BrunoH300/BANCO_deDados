@@ -111,6 +111,14 @@ Questao 19{
   LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
   GROUP BY alunos.nome;
 }
+Questao 20{
+  SELECT livros.titulo, SUM(vendas.quantidade) AS quantidade_vendida
+  FROM livros
+  INNER JOIN vendas ON livros.id = vendas.livro_id
+  GROUP BY livros.titulo
+  ORDER BY quantidade_vendida DESC
+  LIMIT 1;
+}
 
 
 
